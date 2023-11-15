@@ -14,13 +14,13 @@ const Book = ({ book }) => {
     return (
         <div className='bookCard'>
             <div className='posterContainer'>
-                <img src={posterUrl} alt={title} style={{ width: '160px', height: '100%' }} />
+                <img src={posterUrl} alt={title} style={{ width: 'auto', height: '300px' }} />
             </div>
             <div className='infoContainer'>
                 <div className='bookHeaderTitle'>
                     <div className='titleDiv'>
                         <h3 className='main'>{title}</h3>
-                        <h5 className='rate'>{rate}</h5>
+                        <h5 className='rate'>&#9733; {rate}</h5>
                     </div>
                     <h4 className='sub'>{subtitle}</h4>
                     <h5 className='authors'>
