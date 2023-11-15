@@ -1,18 +1,51 @@
 body {
   margin: 0px; 
+  background-color: rgb(173, 164, 172);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
 }
 
 .bookList {
-  margin: 80px;
-  max-width: 1600px;
-  display: flex;
+  padding-inline-start: var(--explore_padding-inline);
+  padding-inline-end: var(--explore_padding-inline);
+  display:grid;
+  grid-auto-flow: row dense;
+  grid-auto-rows: var(--breakpoint-grid_auto-rows, minmax(min-content, max-content));
+  grid-gap: var(--breakpoint-grid_row-gap,0) var(--breakpoint-grid_column-gap, 0px);
+  grid-template-columns: var(--breakpoint-grid_column-template, repeat(var(--breakpoint-grid_columns,1), minmax(0, 1fr)));
 }
 
-.bookCard {
-  margin: 10px;
-  max-width: auto;
-  display: flexbox;
+@media (min-width: 950px) {
+  .bookList {
+  --breakpoint-grid_columns: 6;
+  }
 }
+
+@media (min-width: 550px) {
+  .bookList {
+    --breakpoint-grid_columns: 4;
+  }
+}
+
+.bookList {
+  --breakpoint-grid_row-gap: 40px;
+  --breakpoint-grid_column-gap: 24px;
+}
+
+/* .bookList {
+  --breakpoint-grid_columns: var(--24px);
+  --breakpoint-grid_row-gap: var(--40px);
+  --breakpoint-grid_column-gap: var(10px);
+} */
+
+  .bookCard {
+  margin: 0px;
+  max-width: 400px;
+  
+} 
 
 /* 
 

@@ -21,8 +21,8 @@ const Book = ({ book }) => {
                 <h4>{title}</h4>
                 <h5>{formatReleaseDate(release_date)}</h5>
                 <p className='overviewText'>{overview}</p>
+                <h6>Name</h6>
             </div>
-            <h1>Name</h1>
         </div>
     );
 };
