@@ -7,11 +7,13 @@ import Footer from './components/Footer';
 import ShowMoreButton from './components/ShowMoreButton';
 
 const App = () => {
-    const [visibleBooks, setVisibleBooks] = useState(10);
+  const [visibleBooks, setVisibleBooks] = useState(10);
+  const [showMoreButton, setShowMoreButton] = useState(true);
 
-    const showMoreBooks = () => {
-      setVisibleBooks(prev => prev + 10);
-    };
+  const showMoreBooks = () => {
+    setVisibleBooks(bookData.length);
+    setShowMoreButton(false);
+  };
 
   return (
     <div className='app'>
@@ -22,7 +24,11 @@ const App = () => {
             <Book key={index} book={book} />
           ))}
         </div>
-        <ShowMoreButton onClick={showMoreBooks} />
+        {showMoreButton && (
+          <div className='ShowMoreButton'>
+            <ShowMoreButton onClick={showMoreBooks} />
+          </div>
+        )}
       </main>
       <Footer />
     </div>
