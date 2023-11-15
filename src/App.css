@@ -1,9 +1,10 @@
 body {
   margin: 0px; 
-  background-color: rgb(173, 164, 172);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   min-height: 100vh; 
+  color: rgb(63, 63, 63);
 }
 
 body,
@@ -11,10 +12,17 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
 }
 
+
   #site-content { 
   max-width: 1800px;
   width: 100%;
   }  
+
+  .headerContainer {
+    padding-inline-start: 40px;
+    padding-inline-end: 40px;
+  }
+  
 
 .bookList {
   display:flex;
@@ -46,12 +54,52 @@ h1, h2, h3, h4, h5, h6, p {
 
  } */
 
+ .titleDiv {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+ }
+
+
+
+ .main {
+  color:rgba(0, 86, 178, 0.944);
+ }
+
+.sub {
+  font-weight:400;
+  line-height: 1.3;
+  color:rgba(0, 86, 178, 0.944);
+}
+
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.author {
+  margin-right: 8px; /* Adjust as needed */
+}
+
+.publishDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
  .overviewText {
   margin-top: 8px;
+  color: hsla(0, 0%, 0%, 45%);
 
  }
 
 @media (min-width: 550px) {
+.header {
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
+}
+
   .bookList {
     padding-inline-start: 40px;
     padding-inline-end: 40px;
@@ -60,6 +108,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (min-width: 950px) {
+  .header {
+    padding-inline-start: 40px;
+    padding-inline-end: 40px;
+  }
+
   .bookList {
     padding-inline-start: 40px;
     padding-inline-end: 40px;
@@ -68,6 +121,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (min-width: 1128px) {
+  .header {
+    padding-inline-start: 80px;
+    padding-inline-end: 80px;
+  }
+
   .bookList {
     padding-inline-start: 80px;
     padding-inline-end: 80px;

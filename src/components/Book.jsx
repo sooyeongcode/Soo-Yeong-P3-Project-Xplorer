@@ -1,11 +1,11 @@
 
 
 const Book = ({ book }) => {
-    const { title, publish_date, overview, poster_path } = book;
+    const { title, publish_date, overview, poster_path, author, subtitle, rate } = book;
     
     const posterUrl = poster_path;
     
-    const formatReleaseDate = (date) => {
+    const formatPublishDate = (date) => {
         const options = { year: 'numeric', month: 'short', day: 'numeric' };
         return new Date(date).toLocaleDateString('en-US', options);
     };
@@ -17,9 +17,26 @@ const Book = ({ book }) => {
                 <img src={posterUrl} alt={title} style={{ width: '160px', height: '100%' }} />
             </div>
             <div className='infoContainer'>
-                <h4>{title}</h4>
-                <h5><span style={{fontWeight: 'lighter' }}>{formatReleaseDate(publish_date)}</span></h5>
+                <div className='bookHeaderTitle'>
+                    <div className='titleDiv'>
+                        <h3 className='main'>{title}</h3>
+                        <h5 className='rate'>{rate}</h5>
+                    </div>
+                    <h4 className='sub'>{subtitle}</h4>
+                    <h5 className='authors'>
+                        {Array.isArray(author) ? (
+                            author.map((auth, index) => (
+                                <span key={index} className='author'>{auth}</span>
+                            ))
+                        ) : (
+                            <span className='author'>{author}</span>
+                        )}
+                        </h5>
+                <h5 className='publishDate'>
+                    <span style={{fontWeight: 'lighter' }}>{formatPublishDate(publish_date)}</span></h5>
+                </div>
                 <p className='overviewText'>{overview}</p>
+               
             </div>
         </div>
     );
